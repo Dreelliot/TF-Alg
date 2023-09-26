@@ -9,4 +9,5 @@ add_executable(TF main.cpp
         Cliente.h
         Reserva.h
         ItemCarta.h
-        Carta.h)
+        Carta.h
+        BubbleSort.h)
