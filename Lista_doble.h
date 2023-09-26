@@ -1,16 +1,19 @@
 #ifndef TF_LISTA_DOBLE_H
 #define TF_LISTA_DOBLE_H
+
 #include "Nodo.h"
+
 using namespace std;
 
-template <class T>
+template<class T>
 class Lista_doble {
 private:
-    Nodo<T>* cabeza;
-    Nodo<T>* cola;
+    Nodo<T> *cabeza;
+    Nodo<T> *cola;
     int tamanio;
 public:
-    Lista_doble() :cabeza(nullptr), cola(nullptr), tamanio(0) {}
+    Lista_doble() : cabeza(nullptr), cola(nullptr), tamanio(0) {}
+    
     ~Lista_doble() {
         limpiar();
     }
@@ -19,8 +22,7 @@ public:
         auto newNodo = new Nodo<T>(dato);
         if (es_vacio()) {
             cabeza = cola = newNodo;
-        }
-        else {
+        } else {
             newNodo->next = cabeza;
             cabeza->prev = newNodo;
             cabeza = newNodo;
@@ -29,11 +31,10 @@ public:
     }
     
     void a_atras(T dato) {
-        Nodo<T>* newNodo = new Nodo<T>(dato);
+        Nodo<T> *newNodo = new Nodo<T>(dato);
         if (es_vacio()) {
             cabeza = cola = newNodo;
-        }
-        else {
+        } else {
             newNodo->prev = cola;
             cola->next = newNodo;
             cola = newNodo;
@@ -44,9 +45,8 @@ public:
     void quitar_frente() {
         if (es_vacio()) {
             return;
-        }
-        else {
-            Nodo<T>* aux = cabeza;
+        } else {
+            Nodo<T> *aux = cabeza;
             cabeza = cabeza->next;
             if (cabeza) {//revisa si la nueva cabeza no es null
                 cabeza->prev = nullptr;
@@ -59,9 +59,8 @@ public:
     void quitar_atras() {
         if (es_vacio()) {
             return;
-        }
-        else {
-            Nodo<T>* aux = cola;
+        } else {
+            Nodo<T> *aux = cola;
             cola = cola->prev;
             if (cola) {
                 cola->next = nullptr;
@@ -74,7 +73,8 @@ public:
     int get_tamanio() {
         return tamanio;
     }
-    Nodo<T>* get_cabeza() {
+    
+    Nodo<T> *get_cabeza() {
         return cabeza;
     }
     
@@ -89,7 +89,7 @@ public:
     }
     
     void imprimir_lista_doble() {
-        Nodo<T>* aux = cabeza;
+        Nodo<T> *aux = cabeza;
         while (aux) {
             cout << aux->dato << " ";
             aux = aux->next;

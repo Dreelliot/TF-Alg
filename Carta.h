@@ -1,5 +1,6 @@
 #ifndef TF_CARTA_H
 #define TF_CARTA_H
+
 #include "Lista_doble.h"
 #include "ItemCarta.h"
 
@@ -8,7 +9,8 @@ private:
 
 public:
     //Lista_doble<ItemCarta*>*menu=new Lista_doble<ItemCarta*>();
-    Lista_doble<ItemCarta*> menu;
+    Lista_doble<ItemCarta *> menu;
+    
     Carta() {
         menu.a_frente(new ItemCarta("Spaghetti/Fettuccine Bolognesa", 30.00));
         menu.a_frente(new ItemCarta("Spaghetti/Fetuccine Alfredo", 28.00));
@@ -18,12 +20,13 @@ public:
         menu.a_frente(new ItemCarta("Canelones de carne", 55.00));
         menu.a_frente(new ItemCarta("Ravioles de carne", 40.00));
     }
+    
     void mostrar_Carta() {
         cout << "\n===       Carta       ===" << endl;
-        Nodo<ItemCarta*>* aux = menu.get_cabeza();
+        Nodo<ItemCarta *> *aux = menu.get_cabeza();
         
         while (aux) {
-            cout << aux->dato->getNombre() << "    " << "S/. " << aux->dato->getPrecio()<<endl;
+            cout << aux->dato->getNombre() << "    " << "S/. " << aux->dato->getPrecio() << endl;
             aux = aux->next;
         }
         cout << endl;

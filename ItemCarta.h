@@ -12,6 +12,7 @@ public:
         this->nombre = nombre;
         this->precio = precio;
     }
+    
     ItemCarta() {
         this->nombre = "";
         this->precio = 0;
@@ -20,6 +21,7 @@ public:
     string getNombre() {
         return nombre;
     }
+    
     float getPrecio() {
         return precio;
     }
