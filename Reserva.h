@@ -2,6 +2,7 @@
 #define TF_RESERVA_H
 #include "Lista_doble.h"
 #include <string>
+#include <fstream>
 
 class Reserva{
 protected:
@@ -43,8 +44,24 @@ public:
     }
     
    void Mostrar_Reservas(Nodo<Reserva*>* reservas){
+        cout << "===      Reservas     ===" << endl;
+        Nodo<Reserva*>* aux = reservas;
+       
+        while (aux->next) {
+            cout << aux->dato->nombreR<<endl;
+            cout<<aux->dato->cantPersonas<<endl;
+            cout<<aux->dato->fecha<<endl;
+            cout<<aux->dato->hora<<endl<<endl;
+            aux = aux->next;
+        }
+        cout << endl;
+    }
+    void Imprimir_Reservas(Nodo<Reserva*>* reservas){
         cout << "===     Reserva     ===" << endl;
-       Nodo<Reserva*>* aux = reservas;
+        Nodo<Reserva*>* aux = reservas;
+        if(aux->next== nullptr){
+            cout<<"No hay reservas registradas";
+        }
         while (aux->next) {
             cout << aux->dato->nombreR<<endl;
             cout<<aux->dato->cantPersonas<<endl;
