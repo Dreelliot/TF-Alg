@@ -1,7 +1,12 @@
 
 ===     Reservas     ===
-- Nombre: alna
+- Nombre: Pep
 - # de Personas: 2
-- Fecha: 1
-- Hora: 4
+- Fecha: 14
+- Hora: 2
+
+- Nombre: Juan
+- # de Personas: 4
+- Fecha: 23
+- Hora: 5
 

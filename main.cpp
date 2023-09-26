@@ -3,21 +3,19 @@
 #include "Carta.h"
 #include "ControlReservas.h"
 #include "fstream"
+
 using namespace std;
 
-void menuOrden()
-{
+void menuOrden() {
     int opcO = 0;
-    while (opcO == 3 || opcO == 2 || opcO == 1)
-    {
+    while (opcO == 3 || opcO == 2 || opcO == 1) {
         cout << "\n=== Restaurant La Trattoria ===" << endl;
         cout << "1. Ordenar por cantidad de personas" << endl;
         cout << "2. Ordenar por fecha" << endl;
         cout << "3. Ordenar por Hora" << endl;
         cout << "Ingrese la opcion: ";
         cin >> opcO;
-        switch (opcO)
-        {
+        switch (opcO) {
             case 1:
                 // OrdenarCant();
                 break;
@@ -34,23 +32,19 @@ void menuOrden()
     }
 }
 
-ControlReservas* reservas = new ControlReservas();
+ControlReservas *reservas = new ControlReservas();
 
-void menuReserva()
-{
+void menuReserva() {
     
     int opcR = 0;
-    while (opcR != 2)
-    {
+    while (opcR != 2) {
         cout << "\n=== Restaurant La Trattoria ===" << endl;
         cout << "1. Realizar nueva reserva" << endl;
         cout << "2. Salir" << endl;
         cout << "Ingrese la opcion: ";
         cin >> opcR;
-        switch (opcR)
-        {
-            case 1:
-            {
+        switch (opcR) {
+            case 1: {
                 string nombreR;
                 int cantPersonas;
                 long long fecha;
@@ -76,11 +70,9 @@ void menuReserva()
     }
 }
 
-void menuAdmin()
-{
-    int opcA=0;
-    while (opcA != 4)
-    {
+void menuAdmin() {
+    int opcA = 0;
+    while (opcA != 4) {
         cout << "\n=== Restaurant La Trattoria ===" << endl;
         cout << "===         Admin           ===" << endl;
         cout << "1. Ver las reservas" << endl;
@@ -90,17 +82,15 @@ void menuAdmin()
         cout << "Ingrese la opcion: ";
         cin >> opcA;
         
-        switch (opcA)
-        {
+        switch (opcA) {
             case 1:
                 reservas->Mostrar_Reservas();
                 break;
             case 2:
                 menuOrden();
                 break;
-            case 3:
-            {
-               reservas->Imprimir_Reservas();
+            case 3: {
+                reservas->Imprimir_Reservas();
                 break;
             }
             case 4:
@@ -113,14 +103,12 @@ void menuAdmin()
     }
 }
 
-Carta* carta = new Carta();
-int main()
-{
-    
+Carta *carta = new Carta();
+
+int main() {
     int opc = 0;
     
-    do
-    {
+    do {
         cout << "\n=== Restaurant La Trattoria ===" << endl;
         cout << "1. Ver la carta" << endl;
         cout << "2. Hacer una reseva" << endl;
@@ -129,8 +117,7 @@ int main()
         cout << "Ingrese la opcion: ";
         cin >> opc;
         
-        switch (opc)
-        {
+        switch (opc) {
             case 1:
                 carta->mostrar_Carta();
                 break;
