@@ -19,7 +19,7 @@ public:
         menu.a_frente(new ItemCarta("Ravioles de carne", 40.00));
     }
     void mostrar_Carta() {
-        cout << "===       Carta       ===" << endl;
+        cout << "\n===       Carta       ===" << endl;
         Nodo<ItemCarta*>* aux = menu.get_cabeza();
         
         while (aux) {
