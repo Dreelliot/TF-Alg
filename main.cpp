@@ -47,8 +47,8 @@ void menuReserva() {
             case 1: {
                 string nombreR;
                 int cantPersonas;
-                long long fecha;
-                int hora;
+                string fecha;
+                string hora;
                 cout << "Nombre: ";
                 cin >> nombreR;
                 cout << "Nro Personas: ";

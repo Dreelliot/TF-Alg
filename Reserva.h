@@ -9,23 +9,23 @@ class Reserva {
 protected:
     string nombreR;
     int cantPersonas;
-    long long fecha;
-    int hora;
+    string fecha;
+    string hora;
 public:
-    Reserva(string nombreR, int cantPersonas, long long fecha, int hora) {
+    Reserva(string nombreR, int cantPersonas, string fecha, string hora) {
         this->nombreR = nombreR;
         this->cantPersonas = cantPersonas;
         this->fecha = fecha;
         this->hora = hora;
     }
     
-    Reserva() : nombreR(""), cantPersonas(0), fecha(0), hora(0) {}
+    Reserva() : nombreR(""), cantPersonas(0), fecha(""), hora("") {}
     
     ~Reserva() {
         this->nombreR = "";
         this->cantPersonas = 0;
-        this->fecha = 0;
-        this->hora = 0;
+        this->fecha = "";
+        this->hora = "";
     }
     
     string getNombreR() {
@@ -36,11 +36,11 @@ public:
         return cantPersonas;
     }
     
-    long long getFecha() {
+    string getFecha() {
         return fecha;
     }
     
-    int getHora() {
+    string getHora() {
         return hora;
     }
     
